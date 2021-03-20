@@ -17,7 +17,7 @@ With the increasing amount of covid threats, everyone is trying to get themselve
 - Keras
 - Arduino IDE 
 
-# Team SyntaxError
+# Team Need a </ br >
 
 - [Priyanka Avhad](https://www.linkedin.com/in/priyanka-avhad/)
 - [Vedanti Kshirsagar](https://www.linkedin.com/in/vedanti-kshirsagar/)
