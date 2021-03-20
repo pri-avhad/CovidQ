@@ -7,6 +7,8 @@ With the increasing amount of covid threats, everyone is trying to get themselve
 
 # Work-flow
 ![To do - CovidQ Basic Workflow](https://user-images.githubusercontent.com/64562764/111867657-7de49280-899b-11eb-9c2b-954578ccb141.jpg)
+![To do - Copy of CovidQ (2)](https://user-images.githubusercontent.com/64562764/111887731-07787c80-89fd-11eb-83d1-ce954316ae57.jpg)
+![To do - Copy of CovidQ (1)](https://user-images.githubusercontent.com/64562764/111887733-08111300-89fd-11eb-992d-d293c8ef417a.jpg)
 
 
 # Tech Stack
