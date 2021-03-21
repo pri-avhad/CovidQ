@@ -29,7 +29,7 @@
 			<td>{{row[3]}}</td>
 			<!--row[4] is missing because we don't want it to be displayed-->
 			<td>{{row[5]}}</td>
-			{%if row[6]=='Not Tested'%}
+			{%if row[6]=='NotTested'%}
 			<td>
 				<a href="{{url_for('editPg',patientId=row[0])}}" class="btn btnNT btn-lg" role="button">
 					{{row[6]}}
