@@ -1,0 +1,56 @@
+{% extends "layout.html" %} {% block content %}
+
+<div class="jumbotron pt-6">
+	<h1 class="display-4 covidq"> COVIDQ </h1>
+</div>
+
+<a href="{{url_for('add')}}" class="btn btn1 btn-lg" role="button">Add Patient</a>
+<a href="{{url_for('queuePage')}}" class="btn btn1 btn-lg" role="button">Check Susceptibility</a>
+{% if not noOfPatients %}
+<h1>Please add patients</h1>
+{% else %}
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Age</th>
+			<th>Result</th>
+			<th>Status</th>
+		</tr>
+	</thead>
+	<tbody>
+		{%for row in values%}
+		<tr>
+			<td>{{row[0]}}</td>
+			<td>{{row[1]}}</td>
+			<td>{{row[2]}}</td>
+			<td>{{row[3]}}</td>
+			<!--row[4] is missing because we don't want it to be displayed-->
+			<td>{{row[5]}}</td>
+			{%if row[6]=='Not Tested'%}
+			<td>
+				<a href="{{url_for('editPg',patientId=row[0])}}" class="btn btnNT btn-lg" role="button">
+					{{row[6]}}
+				</a>
+			</td>
+			{%elif row[6]=='Pending'%}
+			<td>
+				<a href="{{url_for('editPg',patientId=row[0])}}" class="btn btnP btn-lg" role="button">
+					{{row[6]}}
+				</a>
+			</td>
+			{%else%}
+			<td>
+				<a href="{{url_for('editPg',patientId=row[0])}}" class="btn btn-lg btnD" role="button">
+					{{row[6]}}
+				</a>
+			</td>
+			{%endif%}
+		</tr>
+		{%endfor%}
+	</tbody>
+</table>
+{% endif %}
+{% endblock content %}

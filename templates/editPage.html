@@ -1,0 +1,34 @@
+{% extends "layout.html" %} {% block content%}
+<h1 class="display-4" style="text-align: center">UPDATE INFO</h1>
+
+<div class="container1 h-100">
+	<div class="row h-100 justify-content-center align-items-center">
+		<form action="" method="POST" class="update-form">
+			<h4>Select Current Status And Result</h4>
+
+			<div class="statusButtons">
+				<label class="status-label">
+					<input type="radio" name="stat" value="NotTested" />
+					Not Tested and N/A </label><br />
+				<label class="status-label">
+					<input type="radio" name="stat" value="Pending" />
+					Pending and N/A </label><br />
+				<label class="status-label">
+					<input type="radio" name="stat" value="Done Positive" />
+					Done and Positive </label><br />
+				<label class="status-label">
+					<input type="radio" name="stat" value="Done Negative" />
+					Done and Negative
+				</label>
+			</div>
+			<br />
+			<div class="resultButtons">
+				<button type="submit" name="updateStats" class="btn btn3">
+					Update Status
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+{% endblock content%}

@@ -1,0 +1,159 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="jumbotron pt-6">
+	<h1 class="display-4"> LOG A NEW PATIENT </h1>
+	<p class="lead">Please add the patient information along with their X-ray image. </p>
+	<hr class="my-4">
+</div>
+
+<div class="content-section">
+	<form method="POST" action="" enctype="multipart/form-data">
+		{{ form.hidden_tag() }}
+		<!--Adds CSRF token-->
+		<!-- <legend class="border-bottom mb-4">COVID Susceptibility</legend> -->
+		<div class="row">
+			<div class="col">
+				<fieldset class="form-group">
+					<div class="form-group">
+						{{form.pid.label(class="form-control label")}}
+						{% if form.pid.errors %}
+						{{form.pid(class="form-control form-control-lg is-invalid")}}
+						<div class="invalid-feedback">
+							{% for error in form.pid.errors %}
+							<span>{{error}}</span>
+							{% endfor %}
+						</div>
+						{% else %}
+						{{form.pid(class="form-control form-control-lg")}}
+						{% endif %}
+					</div>
+					<br>
+					<div class="row">
+						<div class="col">
+							<div class="form-group">
+								{{form.fname.label(class="form-control label")}}
+								{% if form.fname.errors %}
+								{{form.fname(class="form-control form-control-lg is-invalid")}}
+								<div class="invalid-feedback">
+									{% for error in form.fname.errors %}
+									<span>{{error}}</span>
+									{% endfor %}
+								</div>
+								{% else %}
+								{{form.fname(class="form-control form-control-lg")}}
+								{% endif %}
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group">
+								{{form.lname.label(class="form-control label")}}
+								{% if form.lname.errors %}
+								{{form.lname(class="form-control form-control-lg is-invalid")}}
+								<div class="invalid-feedback">
+									{% for error in form.lname.errors %}
+									<span>{{error}}</span>
+									{% endfor %}
+								</div>
+								{% else %}
+								{{form.lname(class="form-control form-control-lg")}}
+								{% endif %}
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="form-group">
+						{{form.spo2.label(class="form-control label")}}
+						{% if form.spo2.errors %}
+						{{form.spo2(class="form-control form-control-lg is-invalid")}}
+						<div class="invalid-feedback">
+							{% for error in form.spo2.errors %}
+							<span>{{error}}</span>
+							{% endfor %}
+						</div>
+						{% else %}
+						{{form.spo2(class="form-control form-control-lg")}}
+						{% endif %}
+					</div>
+					<br>
+					<div class="form-group">
+						{{form.age.label(class="form-control label")}}
+						{% if form.age.errors %}
+						{{form.age(class="form-control form-control-lg is-invalid")}}
+						<div class="invalid-feedback">
+							{% for error in form.age.errors %}
+							<span>{{error}}</span>
+							{% endfor %}
+						</div>
+						{% else %}
+						{{form.age(class="form-control form-control-lg")}}
+						{% endif %}
+					</div>
+					<br>
+				</fieldset>
+			</div>
+			<div class="col rightBlock">
+				<h3 class="comorbid"> COMORBIDITIES </h3>
+				<!-- <h1 class="display-1"> LOG A NEW PATIENT </h1> -->
+
+				<div class="col">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" name="circulatory" value="1">
+							Circulatory Diseases
+						</label>
+						<br>
+						<label>
+							<input type="checkbox" name="respiratory" value="1">
+							Respiratory Diseases
+						</label>
+						<br>
+						<label>
+							<input type="checkbox" name="alzheimer" value="1">
+							Alzheimer's Disease
+						</label>
+						<br>
+						<label>
+							<input type="checkbox" name="obesity" value="1">
+							Obesity
+						</label>
+						<br>
+						<label>
+							<input type="checkbox" name="maligNeoplasms" value="1">
+							Malignant Neoplasms (Cancer)
+						</label>
+						<br>
+						<label>
+							<input type="checkbox" name="dementia" value="1">
+							Diabetes
+						</label>
+						<br>
+						<label>
+							<input type="checkbox" name="renal" value="1">
+							Renal Failure
+						</label>
+						<br>
+						<label>
+							<input type="checkbox" name="dementia" value="1">
+							Dementia
+						</label>
+					</div>
+					<br>
+					<a href="{{url_for('checkspo2')}}" class="btn btn-spo2 btn-lg active" role="button">Check your
+						spo2</a>
+					<br>
+					<p class="help-block">Press this if you want to calculate your spO2 through the connected sensor.
+					</p>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="form-group">
+			<label for="xrayImages">File input </label>
+			<input type="file" id="xray" name="xray" enctype="multipart/form-data" required="True">
+			<p class="help-block">Input your X-ray image!</p>
+		</div>
+		<div class="form-group" id="addPatientButton">
+			{{form.submit(class="btn btn-submit")}}
+		</div>
+	</form>
+	{% endblock content %}

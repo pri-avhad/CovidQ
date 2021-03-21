@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="jumbotron pt-6">
+	<h1 class="display-4"> CHECK YOUR spO2 </h1>
+	<hr class="my-4">
+</div>
+<form method="POST" action="">
+
+	<div>
+		<button type="submit" class="btn btn-success" name="spo2" value="o2">Check your spO2</button>
+		<br>
+		<h3 class="checkOxy"> {{oxygen}}% </h3>
+	</div>
+</form>
+{% endblock content %}
