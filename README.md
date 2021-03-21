@@ -1,8 +1,13 @@
+![Untitled design (5)](https://user-images.githubusercontent.com/64562764/111891312-1e789800-8a18-11eb-8275-977ecb7a8a99.png)
 
 # 
 With the increasing amount of covid threats, everyone is trying to get themselves tested which is causing a surge in the testing facilities. This might delay the testing for the people who might be more at risk of Covid. Since there is no way to gauge who urgently needs it, currently we can't define a priority queue for the testing. Tackling this problem, we wish to design a system that helps in prioritizing covid testing. This system would output a list of patients in decreasing order of susceptibility to covid thereby making it easier for the covid testing centers to prioritize patients that are highly vulnerable to covid rather than first come first serve basis which is inefficient for our current needs.
 
-# Model
+# Screenshots
+![7](https://user-images.githubusercontent.com/64562764/111892247-b3cb5a80-8a1f-11eb-91f3-85b49ea639d4.png)
+![9](https://user-images.githubusercontent.com/64562764/111892250-b5951e00-8a1f-11eb-88ea-ca497151a22f.png)
+![8](https://user-images.githubusercontent.com/64562764/111892249-b4fc8780-8a1f-11eb-8a14-682bfe7c2024.png)
+![10](https://user-images.githubusercontent.com/64562764/111892251-b5951e00-8a1f-11eb-9180-c7042ea4d834.png)
 
 
 # Work-flow
